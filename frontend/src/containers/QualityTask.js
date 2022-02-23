@@ -15,8 +15,20 @@ function QualityTask({ account, task }) {
 	const [currIdx, setCurrIdx] = useState(0);
 	const [candidate, setCandidate] = useState(['A', 'B', 'C']);
 	const [result, setResult] = useState([]);
+	const [availableChoices, setavailableChoices] = useState([]);
 
-	
+	const getPermuteArray = () => {
+		let arr = ["IN", "TIN", "KIN"]
+		for (let i = 0; i < arr.length; i++) {
+			let iRand = parseInt(arr.length * Math.random());
+			let temp = arr[i];
+			arr[i] = arr[iRand];
+			arr[iRand] = temp;
+		}
+		return arr
+	}
+
+
 	const getQualityChallenges = () => {
 		
 		axios.get(`${configData.SERVER_URL}/api/v1/quality_challenges`)
@@ -28,6 +40,7 @@ function QualityTask({ account, task }) {
 			}
 			setChallenges(challenges_list);
 			setFlag(true);
+			setavailableChoices(getPermuteArray());
 		})
         .catch((error) => { 
             setFlag(false);
@@ -51,18 +64,21 @@ function QualityTask({ account, task }) {
 	}
 
 	const handleButtonOnClick = () => {
+		console.log(availableChoices);
 		console.log(result);
 		if (verifySelection(result)) {
 			axios.post('http://10.1.0.41:9292/api/v1/record',{
 				account: account,
 				task: task,
 				challengeID: challenges[currIdx]["ID"],
-				choice: result
+				availableChoices: availableChoices,
+				choices: result
 			})
 			.then( (response) => {
 				console.log(response)
 				resetResult();
-				setCurrIdx(currIdx + 1)
+				setCurrIdx(currIdx + 1);
+				setavailableChoices(getPermuteArray());
 			})
 			.catch( (error) => {
 				console.log(error)
@@ -97,15 +113,15 @@ function QualityTask({ account, task }) {
 				<div className="flex-container-col">
 					<div className="flex-container">
 						<div className="flex-container-col">
-							<ImageWrapper url={rootImageURL+challenges[currIdx]["IN"]}/>
+							<ImageWrapper url={rootImageURL+challenges[currIdx][availableChoices[0]]}/>
 							A
 						</div>
 						<div className="flex-container-col">
-							<ImageWrapper url={rootImageURL+challenges[currIdx]["TIN"]}/>
+							<ImageWrapper url={rootImageURL+challenges[currIdx][availableChoices[1]]}/>
 							B
 						</div>
 						<div className="flex-container-col">
-							<ImageWrapper url={rootImageURL+challenges[currIdx]["KIN"]}/>
+							<ImageWrapper url={rootImageURL+challenges[currIdx][availableChoices[2]]}/>
 							C
 						</div>
 					</div>

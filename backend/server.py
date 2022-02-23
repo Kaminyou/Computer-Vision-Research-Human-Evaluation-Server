@@ -5,7 +5,7 @@ import sqlite3
 from flask import Flask, Response, jsonify, request, send_from_directory
 from flask_cors import CORS
 
-from src.utils import get_primary_key, get_raw_filename
+from src.utils import combine_list_string, get_primary_key, get_raw_filename
 
 CONFIGS = {
     "ENV": "development",
@@ -53,14 +53,16 @@ def record():
     account = data['account']
     task = data['task']
     challenge_id = data['challengeID']
-    choice = data['choice']
+    available_choices = combine_list_string(data['availableChoices'])
+    choices = combine_list_string(data['choices'])
+    print(account, task, challenge_id, available_choices, choices)
 
     try:
         uuid = get_primary_key()
         conn = sqlite3.connect('evaluation.db')
         c = conn.cursor()
-        c.execute(f"INSERT INTO EVALUATION (ID,ACCOUNT,TASK,CHALLENGEID,CHOICE) \
-                    VALUES ('{uuid}', '{account}', '{task}', '{challenge_id}', '{choice}' )")
+        c.execute(f"INSERT INTO EVALUATION (ID,ACCOUNT,TASK,CHALLENGE_ID,AVAILABLE_CHOICES,CHOICES) \
+                    VALUES ('{uuid}', '{account}', '{task}', '{challenge_id}', '{available_choices}', '{choices}' )")
         conn.commit()
         c.close()
         return Response(

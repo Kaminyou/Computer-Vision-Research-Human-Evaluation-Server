@@ -6,3 +6,6 @@ def get_primary_key():
 
 def get_raw_filename(hashed_name, hashing_table):
     return hashing_table[hashed_name]
+
+def combine_list_string(list):
+    return '||'.join(list)

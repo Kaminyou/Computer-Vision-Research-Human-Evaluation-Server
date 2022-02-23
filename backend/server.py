@@ -30,7 +30,8 @@ def get_image(filename):
         dir_name = os.path.dirname(image_path) 
         return send_from_directory(directory=dir_name, path=image_name)
         
-    except:
+    except Exception as E:
+        print(E)
         return Response(
             "{'massenge':'do not exist'}", 
             status=400, 
@@ -68,4 +69,4 @@ def record():
         )
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=9292)
+    app.run(host='0.0.0.0', port=2222)

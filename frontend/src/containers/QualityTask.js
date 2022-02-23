@@ -1,31 +1,54 @@
 import Button from '@material-ui/core/Button';
-import React, { useState } from "react";
-import ImageWrapper from "../components/ImageWrapper";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import ImageWrapper from '../components/ImageWrapper';
 import TransferList from "../components/TransferList";
+import configData from "../config.json";
 
 
 function QualityTask({ account, task }) {
+
+	const rootImageURL = `${configData.SERVER_URL}/api/v1/images/`
+	const [challenges, setChallenges] = useState([]);
+	const [flag, setFlag] = useState(false);
+
 	
-	// const [challenges, setChallenges] = useState([]);
+	const getQualityChallenges = () => {
+		
+		axios.get(`${configData.SERVER_URL}/api/v1/quality_challenges`)
+		.then((res) => { 
+            var challenges_list = []
+			for (var id in res.data.data) {
+				const item = Object.assign({}, {"ID": id}, res.data.data[id]);
+				challenges_list.push( [item] );
+			}
+			setChallenges(challenges_list);
+			setFlag(true);
+			})
+        .catch((error) => { 
+            setFlag(false);
+            console.error(error);
+            }
+        )
+	}
+
+	useEffect(() => {
+		getQualityChallenges();
+	},[]);
+	
+	console.log(flag)
+	console.log(challenges)
+
 	const [currIdx, setCurrIdx] = useState(0);
-	const urls = [
-		'http://10.1.0.41:2222/api/v1/images/origin_thumbnail.png',
-		'http://10.1.0.41:2222/api/v1/images/reference_thumbnail.png',
-		'http://10.1.0.41:2222/api/v1/images/combined_in_90_thumbnail.png',
-		'http://10.1.0.41:2222/api/v1/images/combined_tin_90_thumbnail.png',
-		'http://10.1.0.41:2222/api/v1/images/combined_kin_90_gaussian_3_thumbnail.png',
-	]
 	const [candidate, setCandidate] = useState(['A', 'B', 'C']);
 	const [result, setResult] = useState([]);
 
-	const challenges = [{"challengeID": '0001',  "urls": urls}];
-	
 	const verifySelection = () => {
 		return true
 	}
 	
 	const handleButtonOnClick = () => {
-		console.log(result);
+		// console.log(result);
 		/*
 		if (verifySelection()) {
 			axios.post('http://10.1.0.41:9292/api/v1/record',{
@@ -48,28 +71,32 @@ function QualityTask({ account, task }) {
 		// setCurrIdx(currIdx + 1)
 	}
 
-	return (
-		<>
-			<p>Rank the best task</p>
+	// console.log(challenges[currIdx]["origin"])
+
+	const renderTask = () => {
+		console.log(challenges[currIdx]["ID"])
+
+		return (
+			<>
 			<div className="flex-container">
 				<div className="flex-container-col">
-					<ImageWrapper url={challenges[currIdx]["urls"][0]}/>
+					<ImageWrapper url={rootImageURL+challenges[currIdx]["origin"]}/>
 					Origin
-					<ImageWrapper url={challenges[currIdx]["urls"][1]}/>
+					<ImageWrapper url={rootImageURL+challenges[currIdx]["reference"]}/>
 					Reference
 				</div>
 				<div className="flex-container-col">
 					<div className="flex-container">
 						<div className="flex-container-col">
-							<ImageWrapper url={challenges[currIdx]["urls"][2]}/>
+							<ImageWrapper url={rootImageURL+challenges[currIdx]["IN"]}/>
 							A
 						</div>
 						<div className="flex-container-col">
-							<ImageWrapper url={challenges[currIdx]["urls"][3]}/>
+							<ImageWrapper url={rootImageURL+challenges[currIdx]["TIN"]}/>
 							B
 						</div>
 						<div className="flex-container-col">
-							<ImageWrapper url={challenges[currIdx]["urls"][4]}/>
+							<ImageWrapper url={rootImageURL+challenges[currIdx]["KIN"]}/>
 							C
 						</div>
 					</div>
@@ -84,6 +111,18 @@ function QualityTask({ account, task }) {
 					Submit
 				</Button>
 			</div>
+			</>
+		)
+	}
+
+	return (
+		<>
+			<p>Rank the candidates according to their qualites</p>
+			{(flag) ? (
+					renderTask()
+				) : (
+					<p>loading</p>
+			)}
 		</>
 	)
 }

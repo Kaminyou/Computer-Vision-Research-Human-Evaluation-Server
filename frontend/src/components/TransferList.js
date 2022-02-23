@@ -60,7 +60,7 @@ function TransferList({ left, right, setLeft, setRight }) {
 	
 	return (
 		<Grid container spacing={2} justifyContent="center" alignItems="center">
-			<Grid item><CustomList title={'Choices'} items={left} checked={checked} numberOfChecked={numberOfChecked} handleToggle={handleToggle} handleToggleAll={handleToggleAll}/></Grid>
+			<Grid item><CustomList title={'Candidates'} items={left} checked={checked} numberOfChecked={numberOfChecked} handleToggle={handleToggle} handleToggleAll={handleToggleAll}/></Grid>
 			<Grid item>
 			<Grid container direction="column" alignItems="center">
 				<Button

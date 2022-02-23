@@ -19,8 +19,8 @@ function QualityTask({ account, task }) {
 		.then((res) => { 
             var challenges_list = []
 			for (var id in res.data.data) {
-				const item = Object.assign({}, {"ID": id}, res.data.data[id]);
-				challenges_list.push( [item] );
+				const item = Object.assign({"ID": id}, res.data.data[id]);
+				challenges_list.push(item);
 			}
 			setChallenges(challenges_list);
 			setFlag(true);
@@ -29,15 +29,12 @@ function QualityTask({ account, task }) {
             setFlag(false);
             console.error(error);
             }
-        )
-	}
+        );
+	};
 
 	useEffect(() => {
 		getQualityChallenges();
 	},[]);
-	
-	console.log(flag)
-	console.log(challenges)
 
 	const [currIdx, setCurrIdx] = useState(0);
 	const [candidate, setCandidate] = useState(['A', 'B', 'C']);
@@ -71,11 +68,7 @@ function QualityTask({ account, task }) {
 		// setCurrIdx(currIdx + 1)
 	}
 
-	// console.log(challenges[currIdx]["origin"])
-
-	const renderTask = () => {
-		console.log(challenges[currIdx]["ID"])
-
+	const renderChallenge = () => {
 		return (
 			<>
 			<div className="flex-container">
@@ -119,7 +112,7 @@ function QualityTask({ account, task }) {
 		<>
 			<p>Rank the candidates according to their qualites</p>
 			{(flag) ? (
-					renderTask()
+					renderChallenge()
 				) : (
 					<p>loading</p>
 			)}

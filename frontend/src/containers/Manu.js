@@ -4,13 +4,18 @@ import TextField from '@material-ui/core/TextField';
 import React, { useState } from "react";
 import swal from "sweetalert";
 
-function Manu({ setAccount, setTask }) {
+function Manu({ task, setAccount, setTask }) {
 
 	const [input, setInput] = useState("");
 	const [selectedBtn, setSelectedBtn] = React.useState("");
 
 	const verifyAccount = (account) => {
 		if (account.length === 0) return false;
+		else return true;
+	}
+
+	const verifyTask = (task) => {
+		if (task === "none") return false;
 		else return true;
 	}
 
@@ -24,13 +29,22 @@ function Manu({ setAccount, setTask }) {
 	}
 	
 	const handleOnClick = () => {
-		if (verifyAccount(input)) {
+		const isVerifiedAccount = verifyAccount(input)
+		const isverifiedTask = verifyTask(task);
+		if (isVerifiedAccount && isverifiedTask) {
 			setAccount(input)
 		}
-		else {
+		else if (!isVerifiedAccount){
 			swal({
 				title: "Error",
 				text: "Account not exists",
+				icon: "error",
+			});
+		}
+		else if (!isverifiedTask){
+			swal({
+				title: "Error",
+				text: "Please choose a task",
 				icon: "error",
 			});
 		}	
@@ -40,8 +54,8 @@ function Manu({ setAccount, setTask }) {
 		<>	
 			<p>Task</p>
 			<ButtonGroup disableElevation variant="contained" color="primary">
-				<Button color={selectedBtn === 'chooseBest' ? "secondary" : "default"} onClick={()=>handleSelectButtonOnClick('chooseBest')}>Choose best</Button>
-				<Button color={selectedBtn === 'isReal' ? "secondary" : "default"} onClick={()=>handleSelectButtonOnClick('isReal')}>Is real</Button>
+				<Button color={selectedBtn === 'QualityTask' ? "secondary" : "default"} onClick={()=>handleSelectButtonOnClick('QualityTask')}>Quality Task</Button>
+				<Button color={selectedBtn === 'FidelityTask' ? "secondary" : "default"} onClick={()=>handleSelectButtonOnClick('FidelityTask')}>Fidelity Task</Button>
 			</ButtonGroup>
 			<p>Please enter your account</p>
 			<div className="flex-container">

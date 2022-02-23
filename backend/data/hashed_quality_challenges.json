@@ -1,0 +1,23 @@
+{
+    "0001": {
+        "origin": "a7df25036c20",
+        "reference": "6f761a7f2370",
+        "IN": "14a6dbfaba03",
+        "TIN": "9d389228ed32",
+        "KIN": "e5d81b82b9a8"
+    },
+    "0002": {
+        "origin": "60ca8738ef30",
+        "reference": "5b950b890293",
+        "IN": "2eb4062687ba",
+        "TIN": "96851529e09b",
+        "KIN": "964eb0b95114"
+    },
+    "0003": {
+        "origin": "e00101688242",
+        "reference": "579ef473bd6d",
+        "IN": "fc2c56b8c0bd",
+        "TIN": "2db886ac1f48",
+        "KIN": "0fd0af4ad305"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "e00101688242": "/mnt/dataset/URUST_USER_STUDY_CASE/lung_lesion/train/case_001/origin_thumbnail.png",
+    "579ef473bd6d": "/mnt/dataset/URUST_USER_STUDY_CASE/lung_lesion/train/case_001/reference_thumbnail.png",
+    "fc2c56b8c0bd": "/mnt/dataset/URUST_USER_STUDY_CASE/lung_lesion/train/case_001/combined_in_latest_thumbnail.png",
+    "2db886ac1f48": "/mnt/dataset/URUST_USER_STUDY_CASE/lung_lesion/train/case_001/combined_tin_latest_thumbnail.png",
+    "0fd0af4ad305": "/mnt/dataset/URUST_USER_STUDY_CASE/lung_lesion/train/case_001/combined_kin_latest_gaussian_1_thumbnail.png",
+    "60ca8738ef30": "/mnt/dataset/URUST_USER_STUDY_CASE/COAD/train/case_001/origin_thumbnail.png",
+    "5b950b890293": "/mnt/dataset/URUST_USER_STUDY_CASE/COAD/train/case_001/reference_thumbnail.png",
+    "2eb4062687ba": "/mnt/dataset/URUST_USER_STUDY_CASE/COAD/train/case_001/combined_in_60_thumbnail.png",
+    "96851529e09b": "/mnt/dataset/URUST_USER_STUDY_CASE/COAD/train/case_001/combined_tin_60_thumbnail.png",
+    "964eb0b95114": "/mnt/dataset/URUST_USER_STUDY_CASE/COAD/train/case_001/combined_kin_60_gaussian_1_thumbnail.png",
+    "a7df25036c20": "/mnt/dataset/URUST_USER_STUDY_CASE/breast/train/case_001/origin_thumbnail.png",
+    "6f761a7f2370": "/mnt/dataset/URUST_USER_STUDY_CASE/breast/train/case_001/reference_thumbnail.png",
+    "14a6dbfaba03": "/mnt/dataset/URUST_USER_STUDY_CASE/breast/train/case_001/combined_in_90_thumbnail.png",
+    "9d389228ed32": "/mnt/dataset/URUST_USER_STUDY_CASE/breast/train/case_001/combined_tin_90_thumbnail.png",
+    "e5d81b82b9a8": "/mnt/dataset/URUST_USER_STUDY_CASE/breast/train/case_001/combined_kin_90_gaussian_3_thumbnail.png"
+}

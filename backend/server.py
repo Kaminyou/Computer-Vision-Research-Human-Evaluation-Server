@@ -1,17 +1,22 @@
+import json
 import os
 import sqlite3
 
-from flask import Flask, Response, request, send_from_directory
+from flask import Flask, Response, jsonify, request, send_from_directory
 from flask_cors import CORS
 
-from src.utils import get_data_mapping_dict, get_primary_key
+from src.utils import get_primary_key, get_raw_filename
 
 CONFIGS = {
     "ENV": "development",
     "DEBUG": True
 }
 
-IMAGE_DICT = get_data_mapping_dict()
+with open('./data/hashing_table.json', 'r') as f:
+    HASING_TABLE = json.load(f)
+
+with open('./data/hashed_quality_challenges.json', 'r') as f:
+    QUALITY_CHALLENGES = json.load(f)
 
 app = Flask(__name__)
 app.config.update(CONFIGS)
@@ -22,10 +27,14 @@ CORS(app)
 def hello():
     return "Welcome to human evaluation image server"
 
-@app.route('/api/v1/images/<filename>', methods = ["GET", "POST"])
+@app.route('/api/v1/quality_challenges', methods = ['GET'])
+def get_quality_challenges():
+    return jsonify({"data": QUALITY_CHALLENGES})
+
+@app.route('/api/v1/images/<filename>', methods = ["GET"])
 def get_image(filename):
     try:
-        image_path = IMAGE_DICT[filename]
+        image_path = HASING_TABLE[filename]
         image_name = os.path.basename(image_path)
         dir_name = os.path.dirname(image_path) 
         return send_from_directory(directory=dir_name, path=image_name)

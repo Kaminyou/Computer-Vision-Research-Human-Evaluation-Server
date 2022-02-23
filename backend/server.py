@@ -1,3 +1,4 @@
+import datetime
 import json
 import os
 import sqlite3
@@ -55,14 +56,15 @@ def record():
     challenge_id = data['challengeID']
     available_choices = combine_list_string(data['availableChoices'])
     choices = combine_list_string(data['choices'])
-    print(account, task, challenge_id, available_choices, choices)
+    #print(account, task, challenge_id, available_choices, choices)
 
     try:
         uuid = get_primary_key()
         conn = sqlite3.connect('evaluation.db')
+        current_time = datetime.datetime.now()
         c = conn.cursor()
-        c.execute(f"INSERT INTO EVALUATION (ID,ACCOUNT,TASK,CHALLENGE_ID,AVAILABLE_CHOICES,CHOICES) \
-                    VALUES ('{uuid}', '{account}', '{task}', '{challenge_id}', '{available_choices}', '{choices}' )")
+        c.execute(f"INSERT INTO EVALUATION (ID,SUBMISSION_DATE,ACCOUNT,TASK,CHALLENGE_ID,AVAILABLE_CHOICES,CHOICES) \
+                    VALUES ('{uuid}', '{current_time}', '{account}', '{task}', '{challenge_id}', '{available_choices}', '{choices}' )")
         conn.commit()
         c.close()
         return Response(

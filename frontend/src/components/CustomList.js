@@ -6,9 +6,9 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import CircleCheckedFilled from '@material-ui/icons/CheckCircle';
 import CircleUnchecked from '@material-ui/icons/RadioButtonUnchecked';
-
 
 function CustomList({ title, items, checked, numberOfChecked, handleToggle, handleToggleAll }){
     
@@ -29,7 +29,16 @@ function CustomList({ title, items, checked, numberOfChecked, handleToggle, hand
                 }}
                 />
             }
-            title={title}
+            title={
+                (title) === "Ranked" ? (
+                    <div>
+                    {title}
+                    <ArrowDownwardIcon/>
+                    </div>
+                ) : (
+                    title
+                )
+            }
             subheader={`${numberOfChecked(items)}/${items.length} selected`}
             />
             <Divider />

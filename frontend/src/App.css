@@ -38,8 +38,9 @@
 }
 
 .photo {
-  height: 300px;
-  width: 300px;
+  object-fit: contain;
+  width: 100%;
+  height: 250px;
 }
 
 .flex-container {

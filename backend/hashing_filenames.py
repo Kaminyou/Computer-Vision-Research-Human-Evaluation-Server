@@ -1,18 +1,13 @@
 import argparse
-import hashlib
 import json
 
-
-def get_sha256_id(string, salt = "bestpaper", length = 12):
-    string = string + salt
-    hash_id = hashlib.sha256(str.encode(string)).hexdigest()
-    return hash_id[:length]
+from src.utils import get_sha256_id
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description='Hasing the filenames')
-    parser.add_argument('filenames_list', help='list of filenames')
-    parser.add_argument('hashing_table', help='hashing table')
+    parser.add_argument('filenames_list', help='input list of filenames')
+    parser.add_argument('hashing_table', help='output hashing table')
     args = parser.parse_args()
 
     hashing_table = {}

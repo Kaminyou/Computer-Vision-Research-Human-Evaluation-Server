@@ -1,3 +1,5 @@
 {
-    "SERVER_URL": "http://10.1.0.41:2222/"
+    "SERVER_URL": "http://10.1.0.41:2222/",
+    "FIDELITY_TASK_TIME_LIMIT": 60,
+    "QUALITY_TASK_TIME_LIMIT": 60
 }

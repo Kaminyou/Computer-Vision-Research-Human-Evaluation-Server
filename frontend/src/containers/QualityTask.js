@@ -18,6 +18,16 @@ function QualityTask({ account, task, setAccount, setTask}) {
 	const [result, setResult] = useState([]);
 	const [availableChoices, setavailableChoices] = useState([]);
 
+	const [counter, setCounter] = useState(configData.FIDELITY_TASK_TIME_LIMIT);
+	
+	useEffect(() => {
+		if (counter > 0) {
+			const timer = setTimeout(() => setCounter(counter - 1), 1000);
+			return () => clearTimeout(timer);
+		}
+	}, [counter]);
+	
+
 	const getPermuteArray = (arr) => {
 		for (let i = arr.length - 1; i >0; i--) {
 			let iRand = Math.floor(Math.random() * (i + 1));
@@ -58,7 +68,8 @@ function QualityTask({ account, task, setAccount, setTask}) {
 	
 	const resetResult = () => {
 		setCandidate(['A', 'B', 'C']);
-		setResult([])
+		setResult([]);
+		setCounter(configData.FIDELITY_TASK_TIME_LIMIT);
 	}
 
 	const handleButtonOnClick = () => {
@@ -149,6 +160,7 @@ function QualityTask({ account, task, setAccount, setTask}) {
 	return (
 		<>
 			<p>{(flag && currIdx !== challenges.length) ? "[" + (currIdx + 1) + " / "+ challenges.length + "]" : ""} Rank the candidates according to their qualites</p>
+			<p>{(flag && currIdx !== challenges.length) ? "Countdown: " + counter : ""}</p>
 			{(flag) ? (
 					(currIdx === challenges.length) ? (
 						<>

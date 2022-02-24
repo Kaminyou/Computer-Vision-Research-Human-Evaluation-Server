@@ -19,6 +19,9 @@ with open('./data/hashing_table.json', 'r') as f:
 with open('./data/hashed_quality_challenges.json', 'r') as f:
     QUALITY_CHALLENGES = json.load(f)
 
+with open('./data/hashed_fidelity_challenges.json', 'r') as f:
+    FIDELITY_CHALLENGES = json.load(f)
+
 app = Flask(__name__)
 app.config.update(CONFIGS)
 
@@ -31,6 +34,10 @@ def hello():
 @app.route('/api/v1/quality_challenges', methods = ['GET'])
 def get_quality_challenges():
     return jsonify({"data": QUALITY_CHALLENGES})
+
+@app.route('/api/v1/fidelity_challenges', methods = ['GET'])
+def get_fidelity_challenges():
+    return jsonify({"data": FIDELITY_CHALLENGES})
 
 @app.route('/api/v1/images/<filename>', methods = ["GET"])
 def get_image(filename):
@@ -56,7 +63,7 @@ def record():
     challenge_id = data['challengeID']
     available_choices = combine_list_string(data['availableChoices'])
     choices = combine_list_string(data['choices'])
-    #print(account, task, challenge_id, available_choices, choices)
+    print(account, task, challenge_id, available_choices, choices)
 
     try:
         uuid = get_primary_key()

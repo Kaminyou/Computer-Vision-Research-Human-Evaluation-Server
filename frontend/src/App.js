@@ -14,7 +14,7 @@ function App() {
 		if (task === "QualityTask") {
 			return <QualityTask account={account} task={task} setAccount={setAccount} setTask={setTask}/>
 		} else if (task === "FidelityTask") {
-			return <FidelityTask  account={account} task={task} setAccount={setAccount} setTask={setTask}/>
+			return <FidelityTask account={account} task={task} setAccount={setAccount} setTask={setTask}/>
 		} else {
 			return <p> ERROR </p>
 		}

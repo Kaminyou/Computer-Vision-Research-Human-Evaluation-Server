@@ -26,6 +26,12 @@ function FidelityTask({ account, task, setAccount, setTask}) {
 		return arr
 	}
 
+	const resetResult = () => {
+		setSelectedBtn("");
+		setResult([])
+	}
+
+
 	useEffect(() => {
 		const getFidelityChallenges = () => {
 		
@@ -78,6 +84,7 @@ function FidelityTask({ account, task, setAccount, setTask}) {
 			})
 			.then( (response) => {
 				console.log(response)
+				resetResult();
 				setCurrIdx(currIdx + 1);
 				setavailableChoices(getPermuteArray(["REAL", "FAKE"]));
 			})

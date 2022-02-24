@@ -1,23 +1,314 @@
 {
-	"0001": {
-		"origin": "/mnt/dataset/URUST_USER_STUDY_CASE/breast/train/case_001/origin_thumbnail.png",
-		"reference": "/mnt/dataset/URUST_USER_STUDY_CASE/breast/train/case_001/reference_thumbnail.png",
-		"IN": "/mnt/dataset/URUST_USER_STUDY_CASE/breast/train/case_001/combined_in_90_thumbnail.png",
-		"TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/breast/train/case_001/combined_tin_90_thumbnail.png",
-		"KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/breast/train/case_001/combined_kin_90_gaussian_3_thumbnail.png"
-	},
-	"0002": {
-		"origin": "/mnt/dataset/URUST_USER_STUDY_CASE/COAD/train/case_001/origin_thumbnail.png",
-		"reference": "/mnt/dataset/URUST_USER_STUDY_CASE/COAD/train/case_001/reference_thumbnail.png",
-		"IN": "/mnt/dataset/URUST_USER_STUDY_CASE/COAD/train/case_001/combined_in_60_thumbnail.png",
-		"TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/COAD/train/case_001/combined_tin_60_thumbnail.png",
-		"KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/COAD/train/case_001/combined_kin_60_gaussian_1_thumbnail.png"
-	},
-	"0003": {
-		"origin": "/mnt/dataset/URUST_USER_STUDY_CASE/lung_lesion/train/case_001/origin_thumbnail.png",
-		"reference": "/mnt/dataset/URUST_USER_STUDY_CASE/lung_lesion/train/case_001/reference_thumbnail.png",
-		"IN": "/mnt/dataset/URUST_USER_STUDY_CASE/lung_lesion/train/case_001/combined_in_latest_thumbnail.png",
-		"TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/lung_lesion/train/case_001/combined_tin_latest_thumbnail.png",
-		"KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/lung_lesion/train/case_001/combined_kin_latest_gaussian_1_thumbnail.png"
-	}
+    "0001": {
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/lung_lesion/train/case_001/origin_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/lung_lesion/train/case_001/reference_thumbnail.png",
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/lung_lesion/train/case_001/combined_in_latest_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/lung_lesion/train/case_001/combined_tin_latest_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/lung_lesion/train/case_001/combined_kin_latest_gaussian_1_thumbnail.png"
+    },
+    "0002": {
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/COAD/train/case_001/origin_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/COAD/train/case_001/reference_thumbnail.png",
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/COAD/train/case_001/combined_in_60_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/COAD/train/case_001/combined_tin_60_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/COAD/train/case_001/combined_kin_60_gaussian_1_thumbnail.png"
+    },
+    "0003": {
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/breast/train/case_001/origin_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/breast/train/case_001/reference_thumbnail.png",
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/breast/train/case_001/combined_in_90_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/breast/train/case_001/combined_tin_90_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/breast/train/case_001/combined_kin_90_gaussian_3_thumbnail.png"
+    },
+    "0004": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_001/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_001/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_001/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_001/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_001/reference_thumbnail.png"
+    },
+    "0005": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_002/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_002/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_002/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_002/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_002/reference_thumbnail.png"
+    },
+    "0006": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_003/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_003/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_003/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_003/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_003/reference_thumbnail.png"
+    },
+    "0007": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_004/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_004/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_004/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_004/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_004/reference_thumbnail.png"
+    },
+    "0008": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_005/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_005/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_005/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_005/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_005/reference_thumbnail.png"
+    },
+    "0009": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_006/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_006/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_006/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_006/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_006/reference_thumbnail.png"
+    },
+    "0010": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_007/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_007/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_007/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_007/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_007/reference_thumbnail.png"
+    },
+    "0011": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_008/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_008/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_008/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_008/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_008/reference_thumbnail.png"
+    },
+    "0012": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_009/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_009/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_009/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_009/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_009/reference_thumbnail.png"
+    },
+    "0013": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_010/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_010/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_010/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_010/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_010/reference_thumbnail.png"
+    },
+    "0014": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_011/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_011/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_011/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_011/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_011/reference_thumbnail.png"
+    },
+    "0015": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_012/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_012/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_012/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_012/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_012/reference_thumbnail.png"
+    },
+    "0016": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_013/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_013/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_013/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_013/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_013/reference_thumbnail.png"
+    },
+    "0017": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_014/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_014/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_014/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_014/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_014/reference_thumbnail.png"
+    },
+    "0018": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_015/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_015/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_015/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_015/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/train/case_015/reference_thumbnail.png"
+    },
+    "0019": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_001/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_001/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_001/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_001/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_001/reference_thumbnail.png"
+    },
+    "0020": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_002/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_002/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_002/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_002/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_002/reference_thumbnail.png"
+    },
+    "0021": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_003/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_003/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_003/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_003/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_003/reference_thumbnail.png"
+    },
+    "0022": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_004/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_004/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_004/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_004/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_004/reference_thumbnail.png"
+    },
+    "0023": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_005/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_005/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_005/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_005/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_005/reference_thumbnail.png"
+    },
+    "0024": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_006/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_006/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_006/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_006/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_006/reference_thumbnail.png"
+    },
+    "0025": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_007/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_007/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_007/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_007/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_007/reference_thumbnail.png"
+    },
+    "0026": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_008/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_008/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_008/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_008/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_008/reference_thumbnail.png"
+    },
+    "0027": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_009/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_009/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_009/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_009/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_009/reference_thumbnail.png"
+    },
+    "0028": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_010/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_010/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_010/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_010/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_010/reference_thumbnail.png"
+    },
+    "0029": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_011/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_011/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_011/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_011/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_011/reference_thumbnail.png"
+    },
+    "0030": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_012/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_012/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_012/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_012/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_012/reference_thumbnail.png"
+    },
+    "0031": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_013/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_013/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_013/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_013/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_013/reference_thumbnail.png"
+    },
+    "0032": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_014/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_014/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_014/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_014/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_014/reference_thumbnail.png"
+    },
+    "0033": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_015/combined_in_4_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_015/combined_kin_4_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_015/combined_tin_4_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_015/original_thumbnail.png",
+        "reference": "/mnt/dataset/URUST_USER_STUDY_CASE/glioma/test/case_015/reference_thumbnail.png"
+    },
+    "0034": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_001/combined_in_10_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_001/combined_kin_10_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_001/combined_tin_10_thumbnail.png"
+    },
+    "0035": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_002/combined_in_10_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_002/combined_kin_10_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_002/combined_tin_10_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_002/original_thumbnail.png"
+    },
+    "0036": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_003/combined_in_10_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_003/combined_kin_10_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_003/combined_tin_10_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_003/original_thumbnail.png"
+    },
+    "0037": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_004/combined_in_10_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_004/combined_kin_10_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_004/combined_tin_10_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_004/original_thumbnail.png"
+    },
+    "0038": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_005/combined_in_10_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_005/combined_kin_10_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_005/combined_tin_10_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_005/original_thumbnail.png"
+    },
+    "0039": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_006/combined_in_10_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_006/combined_kin_10_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_006/combined_tin_10_thumbnail.png"
+    },
+    "0040": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_007/combined_in_10_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_007/combined_kin_10_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_007/combined_tin_10_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_007/original_thumbnail.png"
+    },
+    "0041": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_008/combined_in_10_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_008/combined_kin_10_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_008/combined_tin_10_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_008/original_thumbnail.png"
+    },
+    "0042": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_009/combined_in_10_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_009/combined_kin_10_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_009/combined_tin_10_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_009/original_thumbnail.png"
+    },
+    "0043": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_010/combined_in_10_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_010/combined_kin_10_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_010/combined_tin_10_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/train/case_010/original_thumbnail.png"
+    },
+    "0044": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/test/case_001/combined_in_10_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/test/case_001/combined_kin_10_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/test/case_001/combined_tin_10_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/test/case_001/original_thumbnail.png"
+    },
+    "0045": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/test/case_002/combined_in_10_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/test/case_002/combined_kin_10_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/test/case_002/combined_tin_10_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/test/case_002/original_thumbnail.png"
+    },
+    "0046": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/test/case_003/combined_in_10_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/test/case_003/combined_kin_10_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/test/case_003/combined_tin_10_thumbnail.png"
+    },
+    "0047": {
+        "IN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/test/case_004/combined_in_10_thumbnail.png",
+        "KIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/test/case_004/combined_kin_10_constant_3_thumbnail.png",
+        "TIN": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/test/case_004/combined_tin_10_thumbnail.png",
+        "origin": "/mnt/dataset/URUST_USER_STUDY_CASE/kyoto/test/case_004/original_thumbnail.png"
+    }
 }

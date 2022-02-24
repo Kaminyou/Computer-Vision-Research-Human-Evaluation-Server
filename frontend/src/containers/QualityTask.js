@@ -16,12 +16,13 @@ function QualityTask({ account, task, setAccount, setTask}) {
 	const [currIdx, setCurrIdx] = useState(0);
 	const [candidate, setCandidate] = useState(['A', 'B', 'C']);
 	const [result, setResult] = useState([]);
+	const choices = ["IN", "TIN", "KIN"];
 	const [availableChoices, setavailableChoices] = useState([]);
 
-	const getPermuteArray = () => {
-		let arr = ["IN", "TIN", "KIN"]
-		for (let i = 0; i < arr.length; i++) {
-			let iRand = parseInt(arr.length * Math.random());
+	const getPermuteArray = (array) => {
+		let arr = JSON.parse(JSON.stringify(array)); 
+		for (let i = arr.length - 1; i >0; i--) {
+			let iRand = Math.floor(Math.random() * (i + 1));
 			let temp = arr[i];
 			arr[i] = arr[iRand];
 			arr[iRand] = temp;
@@ -39,9 +40,9 @@ function QualityTask({ account, task, setAccount, setTask}) {
 					const item = Object.assign({"ID": id}, res.data.data[id]);
 					challenges_list.push(item);
 				}
-				setChallenges(challenges_list);
+				setChallenges(getPermuteArray(challenges_list));
+				setavailableChoices(getPermuteArray(choices));
 				setFlag(true);
-				setavailableChoices(getPermuteArray());
 			})
 			.catch((error) => { 
 				setFlag(false);
@@ -51,7 +52,6 @@ function QualityTask({ account, task, setAccount, setTask}) {
 		
 		getQualityChallenges();
 	},[]);
-
 
 	const verifySelection = (result) => {
 		if (result.length !== 3) return false
@@ -78,7 +78,7 @@ function QualityTask({ account, task, setAccount, setTask}) {
 				console.log(response)
 				resetResult();
 				setCurrIdx(currIdx + 1);
-				setavailableChoices(getPermuteArray());
+				setavailableChoices(getPermuteArray(choices));
 			})
 			.catch( (error) => {
 				console.log(error)

@@ -1,4 +1,5 @@
 import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import swal from "sweetalert";
@@ -7,7 +8,7 @@ import TransferList from "../components/TransferList";
 import configData from "../config.json";
 
 
-function QualityTask({ account, task }) {
+function QualityTask({ account, task, setAccount, setTask}) {
 
 	const rootImageURL = `${configData.SERVER_URL}/api/v1/images/`
 	const [challenges, setChallenges] = useState([]);
@@ -28,27 +29,26 @@ function QualityTask({ account, task }) {
 		return arr
 	}
 
-
-	const getQualityChallenges = () => {
-		
-		axios.get(`${configData.SERVER_URL}/api/v1/quality_challenges`)
-		.then((res) => { 
-            let challenges_list = []
-			for (let id in res.data.data) {
-				const item = Object.assign({"ID": id}, res.data.data[id]);
-				challenges_list.push(item);
-			}
-			setChallenges(challenges_list);
-			setFlag(true);
-			setavailableChoices(getPermuteArray());
-		})
-        .catch((error) => { 
-            setFlag(false);
-            console.error(error);
-        });
-	};
-
 	useEffect(() => {
+		const getQualityChallenges = () => {
+		
+			axios.get(`${configData.SERVER_URL}/api/v1/quality_challenges`)
+			.then((res) => { 
+				let challenges_list = []
+				for (let id in res.data.data) {
+					const item = Object.assign({"ID": id}, res.data.data[id]);
+					challenges_list.push(item);
+				}
+				setChallenges(challenges_list);
+				setFlag(true);
+				setavailableChoices(getPermuteArray());
+			})
+			.catch((error) => { 
+				setFlag(false);
+				console.error(error);
+			});
+		};
+		
 		getQualityChallenges();
 	},[]);
 
@@ -67,7 +67,7 @@ function QualityTask({ account, task }) {
 		console.log(availableChoices);
 		console.log(result);
 		if (verifySelection(result)) {
-			axios.post('http://10.1.0.41:9292/api/v1/record',{
+			axios.post(`${configData.SERVER_URL}/api/v1/record`,{
 				account: account,
 				task: task,
 				challengeID: challenges[currIdx]["ID"],
@@ -98,6 +98,14 @@ function QualityTask({ account, task }) {
 			});
 		}
 		
+	}
+	const handleHomeButtonOnClick = () => {
+		setTask("none");
+		setAccount("default");
+	}
+	
+	const handleFidelityTaskButtonOnClick = () => {
+		setTask("FidelityTask");
 	}
 
 	const renderChallenge = () => {
@@ -145,7 +153,15 @@ function QualityTask({ account, task }) {
 			<p>{(flag && currIdx !== challenges.length) ? "[" + (currIdx + 1) + " / "+ challenges.length + "]" : ""} Rank the candidates according to their qualites</p>
 			{(flag) ? (
 					(currIdx === challenges.length) ? (
-						<p>Thank you for your participation</p>
+						<>
+							<p>Thank you for your participation</p>
+							<ButtonGroup disableElevation variant="contained" color="primary">
+							<Button variant="contained" color="primary" onClick={handleHomeButtonOnClick}>
+							Home</Button>
+							<Button  variant="contained" color="secondary" onClick={handleFidelityTaskButtonOnClick}>
+							Fidelity Task</Button>
+							</ButtonGroup>
+						</>
 					) : (
 						renderChallenge()
 					)

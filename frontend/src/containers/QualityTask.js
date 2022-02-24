@@ -16,11 +16,9 @@ function QualityTask({ account, task, setAccount, setTask}) {
 	const [currIdx, setCurrIdx] = useState(0);
 	const [candidate, setCandidate] = useState(['A', 'B', 'C']);
 	const [result, setResult] = useState([]);
-	const choices = ["IN", "TIN", "KIN"];
 	const [availableChoices, setavailableChoices] = useState([]);
 
-	const getPermuteArray = (array) => {
-		let arr = JSON.parse(JSON.stringify(array)); 
+	const getPermuteArray = (arr) => {
 		for (let i = arr.length - 1; i >0; i--) {
 			let iRand = Math.floor(Math.random() * (i + 1));
 			let temp = arr[i];
@@ -41,7 +39,7 @@ function QualityTask({ account, task, setAccount, setTask}) {
 					challenges_list.push(item);
 				}
 				setChallenges(getPermuteArray(challenges_list));
-				setavailableChoices(getPermuteArray(choices));
+				setavailableChoices(getPermuteArray(["IN", "TIN", "KIN"]));
 				setFlag(true);
 			})
 			.catch((error) => { 
@@ -78,7 +76,7 @@ function QualityTask({ account, task, setAccount, setTask}) {
 				console.log(response)
 				resetResult();
 				setCurrIdx(currIdx + 1);
-				setavailableChoices(getPermuteArray(choices));
+				setavailableChoices(getPermuteArray(["IN", "TIN", "KIN"]));
 			})
 			.catch( (error) => {
 				console.log(error)
@@ -97,8 +95,8 @@ function QualityTask({ account, task, setAccount, setTask}) {
 				icon: "error",
 			});
 		}
-		
 	}
+	
 	const handleHomeButtonOnClick = () => {
 		setTask("none");
 		setAccount("default");

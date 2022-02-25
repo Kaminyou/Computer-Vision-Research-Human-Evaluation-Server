@@ -90,7 +90,8 @@ function FidelityTask({ account, task, setAccount, setTask}) {
 				task: task,
 				challengeID: challenges[currIdx]["ID"],
 				availableChoices: availableChoices,
-				choices: result
+				choices: result,
+				duration: configData.FIDELITY_TASK_TIME_LIMIT - counter
 			})
 			.then( (response) => {
 				console.log(response)

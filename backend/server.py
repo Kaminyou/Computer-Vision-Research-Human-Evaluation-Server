@@ -6,7 +6,8 @@ import sqlite3
 from flask import Flask, Response, jsonify, request, send_from_directory
 from flask_cors import CORS
 
-from src.utils import combine_list_string, get_primary_key, get_raw_filename
+from src.utils import (check_db_exist_or_init, combine_list_string,
+                       get_primary_key, get_raw_filename)
 
 CONFIGS = {
     "ENV": "development",
@@ -63,15 +64,16 @@ def record():
     challenge_id = data['challengeID']
     available_choices = combine_list_string(data['availableChoices'])
     choices = combine_list_string(data['choices'])
-    print(account, task, challenge_id, available_choices, choices)
+    duration = data['duration']
+    print(account, task, challenge_id, available_choices, choices, duration)
 
     try:
         uuid = get_primary_key()
         conn = sqlite3.connect('evaluation.db')
         current_time = datetime.datetime.now()
         c = conn.cursor()
-        c.execute(f"INSERT INTO EVALUATION (ID,SUBMISSION_DATE,ACCOUNT,TASK,CHALLENGE_ID,AVAILABLE_CHOICES,CHOICES) \
-                    VALUES ('{uuid}', '{current_time}', '{account}', '{task}', '{challenge_id}', '{available_choices}', '{choices}' )")
+        c.execute(f"INSERT INTO EVALUATION (ID,SUBMISSION_DATE,ACCOUNT,TASK,CHALLENGE_ID,AVAILABLE_CHOICES,CHOICES,DURATION) \
+                    VALUES ('{uuid}', '{current_time}', '{account}', '{task}', '{challenge_id}', '{available_choices}', '{choices}' ,{duration})")
         conn.commit()
         c.close()
         return Response(
@@ -89,4 +91,5 @@ def record():
         )
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=2222)
+    check_db_exist_or_init('evaluation.db')
+    app.run(host='0.0.0.0', port=9292)

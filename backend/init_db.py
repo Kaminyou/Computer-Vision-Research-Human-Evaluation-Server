@@ -11,7 +11,8 @@ if __name__ == "__main__":
         TASK            TEXT  NOT NULL,
         CHALLENGE_ID     TEXT  NOT NULL,
         AVAILABLE_CHOICES TEXT  NOT NULL,
-        CHOICES         TEXT  NOT NULL);''')
+        CHOICES         TEXT  NOT NULL,
+        DURATION INT NOT NULL);''')
     print("CREATE DB")
     conn.commit()
     conn.close()

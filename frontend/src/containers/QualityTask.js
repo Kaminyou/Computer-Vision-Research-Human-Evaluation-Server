@@ -18,7 +18,7 @@ function QualityTask({ account, task, setAccount, setTask}) {
 	const [result, setResult] = useState([]);
 	const [availableChoices, setavailableChoices] = useState([]);
 
-	const [counter, setCounter] = useState(configData.FIDELITY_TASK_TIME_LIMIT);
+	const [counter, setCounter] = useState(configData.QUALITY_TASK_TIME_LIMIT);
 	
 	useEffect(() => {
 		if (counter > 0) {
@@ -69,7 +69,7 @@ function QualityTask({ account, task, setAccount, setTask}) {
 	const resetResult = () => {
 		setCandidate(['A', 'B', 'C']);
 		setResult([]);
-		setCounter(configData.FIDELITY_TASK_TIME_LIMIT);
+		setCounter(configData.QUALITY_TASK_TIME_LIMIT);
 	}
 
 	const handleButtonOnClick = () => {

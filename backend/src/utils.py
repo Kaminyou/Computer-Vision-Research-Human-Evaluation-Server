@@ -1,6 +1,29 @@
 import hashlib
+import sqlite3
 import uuid
+from pathlib import Path
 
+
+def check_db_exist_or_init(db_path='evaluation.db'):
+    db_path = Path(db_path)
+    if not db_path.is_file():
+        init_database(db_path)
+
+def init_database(db_path='evaluation.db'):
+    conn = sqlite3.connect(db_path)
+    print ("Open DB")
+    c = conn.cursor()
+    c.execute('''CREATE TABLE EVALUATION
+        (ID CHAR(37) PRIMARY KEY  NOT NULL,
+        SUBMISSION_DATE TIMESTAMP NOT NULL,
+        ACCOUNT         TEXT  NOT NULL,
+        TASK            TEXT  NOT NULL,
+        CHALLENGE_ID     TEXT  NOT NULL,
+        AVAILABLE_CHOICES TEXT  NOT NULL,
+        CHOICES         TEXT  NOT NULL);''')
+    print("CREATE DB")
+    conn.commit()
+    conn.close()
 
 def get_primary_key():
     return str(uuid.uuid4())

@@ -49,9 +49,9 @@ if __name__ == "__main__":
                 print(f"Weird filename: {filename}")
 
     with open(args.quality_challenges, 'w') as f:
-        json.dump(quality_challenges, f)
+        json.dump(quality_challenges, f, indent='\t')
 
     with open(args.hashed_quality_challenges, 'w') as f:
-        json.dump(hashed_quality_challenges, f)
+        json.dump(hashed_quality_challenges, f, indent='\t')
 
     

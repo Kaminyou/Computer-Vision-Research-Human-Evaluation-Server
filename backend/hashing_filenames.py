@@ -18,4 +18,4 @@ if __name__ == "__main__":
             hashing_table[hashed_filename] = filename
 
     with open(args.hashing_table, 'w') as f:
-        json.dump(hashing_table, f)
+        json.dump(hashing_table, f, indent='\t')

@@ -49,7 +49,7 @@ function QualityTask({ account, task, setAccount, setTask}) {
 					challenges_list.push(item);
 				}
 				setChallenges(getPermuteArray(challenges_list));
-				setavailableChoices(getPermuteArray(["IN", "TIN", "KIN"]));
+				setavailableChoices(getPermuteArray(configData.QUALITY_TASK_OPTIONS));
 				setFlag(true);
 			})
 			.catch((error) => { 
@@ -88,7 +88,7 @@ function QualityTask({ account, task, setAccount, setTask}) {
 				console.log(response)
 				resetResult();
 				setCurrIdx(currIdx + 1);
-				setavailableChoices(getPermuteArray(["IN", "TIN", "KIN"]));
+				setavailableChoices(getPermuteArray(configData.QUALITY_TASK_OPTIONS));
 			})
 			.catch( (error) => {
 				console.log(error)

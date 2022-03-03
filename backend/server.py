@@ -10,8 +10,8 @@ from src.utils import (check_db_exist_or_init, combine_list_string,
                        get_primary_key, get_raw_filename)
 
 CONFIGS = {
-    "ENV": "development",
-    "DEBUG": True
+    "ENV": "production",
+    "DEBUG": False
 }
 
 with open('./data/hashing_table.json', 'r') as f:
@@ -65,7 +65,6 @@ def record():
     available_choices = combine_list_string(data['availableChoices'])
     choices = combine_list_string(data['choices'])
     duration = data['duration']
-    print(account, task, challenge_id, available_choices, choices, duration)
 
     try:
         uuid = get_primary_key()

@@ -1,0 +1,1 @@
+service nginx start && cd /home/cv/backend/ && python3 ./server.py

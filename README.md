@@ -1,7 +1,21 @@
 # Computer-Vision-Research-Human-Evaluation-Server
 A well-developed server for human evaluation in computer vision research
+![img](images/login.png)
+![img](images/quality_task.png)
+## Quick start
+A `Dockerfile` is prepared for quick start.
+1. Before you build the docker image, please modify `SERVER_URL` in `frontend/src/config.json` to match your environment.
+2. Build docker image
+```
+./build.sh
+```
+3. Run the docker container
+```
+docker run -p 9090:9090 -it cvserver
+```
+4. The server will run on port `9090`
 
-## Preparation
+## Customize
 1. We recommend you use docker and install `nginx` in it.
 2. Configure `nginx` config.
 ```

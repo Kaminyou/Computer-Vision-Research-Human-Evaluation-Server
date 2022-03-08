@@ -1,5 +1,5 @@
 {
-    "SERVER_URL": "http://10.1.0.41:9090/",
+    "SERVER_URL": "http://10.1.0.41:9090",
     "FIDELITY_TASK_TIME_LIMIT": 10,
     "QUALITY_TASK_TIME_LIMIT": 30,
     "QUALITY_TASK_OPTIONS": ["A", "B", "C"]

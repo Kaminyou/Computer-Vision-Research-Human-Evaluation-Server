@@ -1,7 +1,7 @@
 # Computer-Vision-Research-Human-Evaluation-Server
-A well-developed server for human evaluation in computer vision research
+A well-developed full-stack server for human evaluation study in computer vision research.
 ![img](images/login.png)
-![img](images/quality_task.png)
+![img](images/fidelity_task.png)
 ## Quick start
 A `Dockerfile` is prepared for quick start.
 1. Before you build the docker image, please modify `SERVER_URL` in `frontend/src/config.json` to match your environment.
